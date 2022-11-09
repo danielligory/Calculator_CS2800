@@ -1,4 +1,4 @@
-package Calculator;
+package calculator;
 
 /**
  * Values stored in a Stack.

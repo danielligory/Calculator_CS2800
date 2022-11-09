@@ -1,4 +1,4 @@
-package Calculator;
+package calculator;
 
 /**
  * A list of the non-number tokens possible in an expression.

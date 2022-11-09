@@ -1,12 +1,12 @@
-package calculator;
+package testCalc;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import Calculator.Entry;
-import Calculator.Stack;
-
+import calculator.Entry;
+import calculator.Stack;
 /**
  * @author Daniel Ligory
  *

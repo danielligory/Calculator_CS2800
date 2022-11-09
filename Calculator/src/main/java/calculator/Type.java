@@ -1,4 +1,4 @@
-package Calculator;
+package calculator;
 
 /**
  * A list of the types of value an Entry can represent.
