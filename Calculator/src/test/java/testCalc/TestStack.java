@@ -17,7 +17,7 @@ class TestStack {
 
   @BeforeEach
   public void createStack() {
-    // Test 1 Check if stack is created
+    // Test 1 Check if stack is created.
     testStack = new Stack();
   }
 

@@ -13,13 +13,10 @@ public class Entry {
   private Symbol other;
   private String str;
   private Type type;
-  
-  
-  
 
   /**
    * A constructor assigning the value to number.
-   * 
+   *
    * @param value number input by user
    */
   public Entry(float value) {
@@ -28,7 +25,7 @@ public class Entry {
 
   /**
    * A constructor assigning the value to other.
-   * 
+   *
    * @param which symbol input by user
    */
   public Entry(Symbol which) {
