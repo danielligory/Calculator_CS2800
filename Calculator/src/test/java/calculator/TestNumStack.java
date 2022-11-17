@@ -3,6 +3,8 @@ package calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.EmptyStackException;
 
 class TestNumStack {
   private NumStack testNumStack;
@@ -33,6 +35,31 @@ class TestNumStack {
 
   }
   
+  @Test
+  public void testPop() {
+    // Test 1 Check if EmptyStackException is thrown when pop is called on Empty Stack.
+    assertThrows(EmptyStackException.class, () -> testNumStack.pop(), 
+        "Should not be able to pop from an Empty Stack."); 
+  }
   
-
+  @Test
+  public void PushThenPop() {
+    // Test 1 Check if correct value is popped when one Entry is pushed.
+    testNumStack.push(123412.421f);
+    assertEquals(123412.421f, testNumStack.pop(), 
+        "Checks if Stack was pushed then popped correctly.");
+  }
+  
+  @Test
+  public void PushManyThenPop() {
+    // Test 1 Check if correct value is popped when multiple Entries are pushed.
+    testNumStack.push(123412.421f);
+    testNumStack.push(16125.123f);
+    testNumStack.push(612461.123f);
+    
+    assertEquals(612461.123f, testNumStack.pop(), 
+        "Checks if Stack was pushed then popped correctly.");
+  }
+  
+  
 }

@@ -1,5 +1,6 @@
 package calculator;
 
+
 /**
  * Since reverse Polish Evaluation only uses a Stack of numeric values we provide a facade to hide details.
  * @author Daniel Ligory
@@ -20,8 +21,6 @@ public class NumStack {
   }
 
   
-  
-  
   /**
    * Used to tell us how many entries are in the Stack.
    * @return the size
@@ -29,5 +28,18 @@ public class NumStack {
   public int size() {
     return size;
   }
+  
+  /**
+   * Returns (and removes) newest Entry.
+   * @return newest Entry.
+   */
+  public float pop() {
+    return numStack.pop().getValue();
+  }
+  
+  
+  
+  
+  
 }
 

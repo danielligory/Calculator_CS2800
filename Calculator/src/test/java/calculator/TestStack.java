@@ -45,7 +45,7 @@ class TestStack {
   public void testPop() {
     // Test 1 Checks if Exception is thrown, can not pop an empty stack.
     assertThrows(EmptyStackException.class, () -> testStack.pop(),
-        "Can not pop from an empty list.");
+        "Should not be able to pop from an Empty Stack.");
   }
 
   @Test
