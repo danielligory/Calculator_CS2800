@@ -87,10 +87,19 @@ class TestNumStack {
   
   @Test
   public void pushThenPopThenCheckEmpty() {
+    //Test 1 Check if correct value is given after Stack is Pushed, Popped and then asked if Empty.
     testNumStack.push(161235.531f);
     testNumStack.pop();
-    assertEquals(true, testNumStack.isEmpty(), "Checks if Stack is Empty after pop ");
+    assertEquals(true, testNumStack.isEmpty(), "Checks if Stack is Empty after pop.");
   }
   
+  @Test
+  public void testTop() {
+    // Test 1 Checking if correct value is given when top method is called.
+    testNumStack.push(524.12f);
+    assertEquals(524.12f, testNumStack.top(), "Checks correct Entry is at the top of the Stack");
+    assertEquals(524.12f, testNumStack.top(), 
+        "Checking twice as Entry should not be removed when top method is called");
+  }
   
 }
