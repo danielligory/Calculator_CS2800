@@ -4,6 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 //import calculator.Entry;
 
+/**
+ * Junit test case to Entry class.
+ * @author Daniel Ligory
+ *
+ */
 class TestEntry {
 
   @Test
