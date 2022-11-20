@@ -43,7 +43,7 @@ class TestNumStack {
   }
   
   @Test
-  public void PushThenPop() {
+  public void pushThenPop() {
     // Test 1 Check if correct value is popped when one Entry is pushed.
     testNumStack.push(123412.421f);
     assertEquals(123412.421f, testNumStack.pop(), 
@@ -51,7 +51,7 @@ class TestNumStack {
   }
   
   @Test
-  public void PushManyThenPop() {
+  public void pushManyThenPop() {
     // Test 1 Check if correct value is popped when multiple Entries are pushed.
     testNumStack.push(123412.421f);
     testNumStack.push(16125.123f);
@@ -59,6 +59,37 @@ class TestNumStack {
     
     assertEquals(612461.123f, testNumStack.pop(), 
         "Checks if Stack was pushed then popped correctly.");
+  }
+  
+  @Test
+  public void pushManyThenPopMany() {
+   // Test 1 Check if correct value is popped when multiple Entries are pushed.
+      testNumStack.push(123412.421f);
+      testNumStack.push(16125.123f);
+      testNumStack.push(612461.123f);
+      
+      assertEquals(612461.123f, testNumStack.pop(), 
+          "Checks if Stack was pushed then popped correctly.");
+      assertEquals(16125.123f, testNumStack.pop(), 
+          "Checks if Stack was pushed then popped correctly.");
+      assertEquals(123412.421f, testNumStack.pop(), 
+          "Checks if Stack was pushed then popped correctly.");
+      
+  }
+  @Test
+  public void testIsEmpty() {
+    // Test 1 Check if correct value is given when given an empty set.
+    assertEquals(true ,testNumStack.isEmpty(), "Checks is Stack is Empty.");
+    // Test 2 Check if correct value is given when an entry is pushed into the Stack.
+    testNumStack.push(123412.421f);
+    assertEquals(false ,testNumStack.isEmpty(), "Checks is Stack is Empty.");
+  }
+  
+  @Test
+  public void pushThenPopThenCheckEmpty() {
+    testNumStack.push(161235.531f);
+    testNumStack.pop();
+    assertEquals(true, testNumStack.isEmpty(), "Checks if Stack is Empty after pop ");
   }
   
   

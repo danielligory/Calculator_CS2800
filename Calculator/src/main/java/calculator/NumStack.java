@@ -36,6 +36,15 @@ public class NumStack {
   public float pop() {
     return numStack.pop().getValue();
   }
+
+
+  public boolean isEmpty() {
+    if (numStack.size() == 0) {
+      return true;
+    }else {
+      return false;
+    }
+  }
   
   
   
