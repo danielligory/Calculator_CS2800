@@ -62,6 +62,15 @@ public class Entry {
   public Type getType() {
     return type;
   }
+  
+  /**
+   * A constructor assigning the value to str.
+   *
+   * @param string input by user
+   */
+  public Entry(String string) {
+    str = string;
+  }
 
 
 }
