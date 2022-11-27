@@ -1,5 +1,11 @@
 package calculator;
 
+/**
+ * Junit test case to StrStack class.
+ * 
+ * @author Daniel Ligory
+ *
+ */
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;

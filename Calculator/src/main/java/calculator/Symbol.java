@@ -4,7 +4,6 @@ package calculator;
  * A list of the non-number tokens possible in an expression.
  * 
  * @author Daniel Ligory
- * @version 1.0
  */
 
 enum Symbol {

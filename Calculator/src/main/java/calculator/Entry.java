@@ -24,9 +24,8 @@ public class Entry {
 
   /**
    * @return the number
-   * @throws bad type Exception
    */
-  public float getValue(){
+  public float getValue() {
     return this.number;
   }
 
@@ -38,21 +37,25 @@ public class Entry {
   public Entry(Symbol which) {
     other = which;
   }
-  
+
   /**
    * @return the other
-   * @throws bad type Exception
    */
-  public Symbol getSymbol(){
+  public Symbol getSymbol() {
+    if (this.equals(null)) {
+      throw new IllegalArgumentException("Bad Type Exception");
+    }
     return this.other;
   }
 
 
   /**
    * @return the str
-   * @throws bad type Exception
    */
-  public String getString(){
+  public String getString() {
+    if (this.equals(null)) {
+      throw new IllegalArgumentException("Bad Type Exception");
+    }
     return str;
   }
 
@@ -60,9 +63,12 @@ public class Entry {
    * @return the type
    */
   public Type getType() {
+    if (this.equals(null)) {
+      throw new IllegalArgumentException("Bad Type Exception");
+    }
     return type;
   }
-  
+
   /**
    * A constructor assigning the value to str.
    *

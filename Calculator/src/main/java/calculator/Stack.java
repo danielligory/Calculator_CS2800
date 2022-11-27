@@ -1,14 +1,15 @@
 package calculator;
 
-import java.util.ArrayList;
-import java.util.EmptyStackException;
-
 /**
  * This class represents a Stack of Entry values.
  * 
  * @author Daniel Ligory
  * 
  */
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+
 
 public class Stack {
   private int size;
@@ -17,7 +18,7 @@ public class Stack {
   /**
    * Adds a new Entry to the Stack.
    * 
-   * @param i entry to be added
+   * @param i entry to be added to Stack
    */
   public void push(Entry i) {
     entries.add(i);
@@ -27,7 +28,7 @@ public class Stack {
   /**
    * Returns (and removes) newest Entry.
    * 
-   * @return the removed Entry
+   * @return the removed Entry from Stack
    */
   public Entry pop() {
     if (this.entries.isEmpty()) {
@@ -42,7 +43,7 @@ public class Stack {
   /**
    * Return (but keeps) newest Entry.
    * 
-   * @return newest Entry
+   * @return newest Entry from Stack
    */
   public Entry top() {
     if (entries.isEmpty()) {
@@ -54,7 +55,7 @@ public class Stack {
   /**
    * How many Entry's in the Stack.
    * 
-   * @return the size of the Entry
+   * @return the size of the Entry Stack
    */
   public int size() {
     return size;

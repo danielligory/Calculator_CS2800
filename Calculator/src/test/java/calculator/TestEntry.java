@@ -2,17 +2,18 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-//import calculator.Entry;
+// import calculator.Entry;
 
 /**
  * Junit test case to Entry class.
+ * 
  * @author Daniel Ligory
  *
  */
 class TestEntry {
 
   @Test
-  void testContructor1(){
+  void testContructor1() {
     // Test 1 Check if constructor constructed properly.
     Entry e = new Entry(100f);
     assertEquals(100f, e.getValue());
@@ -21,14 +22,15 @@ class TestEntry {
     assertEquals(1230090213901239f, e1.getValue());
 
   }
-  
+
   @Test
-  void testContructor2(){
+  void testContructor2() {
     // Test 1 Check if constructor constructed properly.
     Entry e = new Entry(Symbol.LEFT_BRACKET);
     assertEquals(Symbol.LEFT_BRACKET, e.getSymbol());
-    
+
   }
+
   
 }
 
