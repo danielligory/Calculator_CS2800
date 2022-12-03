@@ -24,9 +24,7 @@ class TestStack {
 
   @Test
   public void testPush() {
-    // Test 1 Check if Stack is made properly.
-    assertEquals(testStack.size(), 0, "Checks if Stack is working.");
-    // Test 2 Check if one entry was pushed out properly.
+    assertEquals(testStack.size(), 0, "Test Stack is working.");
     Entry testOne = new Entry(1);
     testStack.push(testOne);
     assertEquals(testStack.size(), 1, "Test if Stack has one Entry");
