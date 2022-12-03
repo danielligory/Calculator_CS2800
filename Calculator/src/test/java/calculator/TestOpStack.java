@@ -22,26 +22,26 @@ class TestOpStack {
 
   @Test
   public void testPush() {
-    // Test 1 Check if Stack is created properly.
-    assertEquals(0, testOpStack.size(), "Check if Stack is working, size of Stack should be 0");
-    // Test 2 Check if one entry was pushed properly.
+    assertEquals(0, testOpStack.size(), "Test that push increased the size of an empty stack.");
+
     testOpStack.push(Symbol.DIVIDE);
-    assertEquals(1, testOpStack.size(), "Check if size of Stack is size 1");
-    // Test 3 Check if two entries was pushed properly.
+    assertEquals(1, testOpStack.size(),
+        "Test that push increased the size of a stack with size 1.");
+
     testOpStack.push(Symbol.PLUS);
-    assertEquals(2, testOpStack.size(), "Check if size of Stack is size 2");
-    // Test 4 Check if 36 entries was pushed properly.
+    assertEquals(2, testOpStack.size(),
+        "Test that push increased the size of a stack with size 2.");
+
     int i = 0;
     while (i != 34) {
       testOpStack.push(Symbol.LEFT_BRACKET);
       i++;
     }
-    assertEquals(36, testOpStack.size(), "Check is size of Stack is 36");
+    assertEquals(36, testOpStack.size(), "Test that push increase the size of stack with size 36.");
   }
 
   @Test
   public void testPop() {
-    // Test 1 Check if EmptyStackException is thrown when pop is called on Empty Stack.
     assertThrows(EmptyStackException.class, () -> testOpStack.pop(),
         "Should not be able to pop from an Empty Stack.");
 
@@ -49,64 +49,61 @@ class TestOpStack {
 
   @Test
   public void pushThenPop() {
-    // Test 1 Check if correct value is popped when one Entry is pushed.
     testOpStack.push(Symbol.RIGHT_BRACKET);
     assertEquals(Symbol.RIGHT_BRACKET, testOpStack.pop(),
-        "Checks if Stack was pushed then popped correctly.");
+        "Test that pushing then popping returns the correct value.");
   }
 
   @Test
   public void pushManyThenPop() {
-    // Test 1 Check if correct value is popped when multiple Entries are pushed.
     testOpStack.push(Symbol.LEFT_BRACKET);
     testOpStack.push(Symbol.DIVIDE);
     testOpStack.push(Symbol.TIMES);
 
     assertEquals(Symbol.TIMES, testOpStack.pop(),
-        "Checks if Stack was pushed then popped correctly.");
+        "Test that many pushed and a pop will return the correct value.");
   }
 
   @Test
   public void pushManyThenPopMany() {
-    // Test 1 Check if correct value is popped when multiple Entries are pushed.
     testOpStack.push(Symbol.LEFT_BRACKET);
     testOpStack.push(Symbol.MINUS);
     testOpStack.push(Symbol.PLUS);
-
     assertEquals(Symbol.PLUS, testOpStack.pop(),
-        "Checks if Stack was pushed then popped correctly.");
+        "Test many pushed and the first pop returns the correct value.");
+
     assertEquals(Symbol.MINUS, testOpStack.pop(),
-        "Checks if Stack was pushed then popped correctly.");
+        "Test another pop to insure correct value is returned.");
+
     assertEquals(Symbol.LEFT_BRACKET, testOpStack.pop(),
-        "Checks if Stack was pushed then popped correctly.");
+        "Test another pop to insure correct value is returned");
 
   }
 
   @Test
   public void testIsEmpty() {
-    // Test 1 Check if correct value is given when given an empty set.
-    assertEquals(true, testOpStack.isEmpty(), "Checks is Stack is Empty.");
-    // Test 2 Check if correct value is given when an entry is pushed into the Stack.
+    assertEquals(true, testOpStack.isEmpty(), "Test empty stack is empty");
+
     testOpStack.push(Symbol.INVALID);
-    assertEquals(false, testOpStack.isEmpty(), "Checks is Stack is Empty.");
+    assertEquals(false, testOpStack.isEmpty(), "Test stack is empty after being pushed a value.");
   }
 
   @Test
   public void pushThenPopThenCheckEmpty() {
-    // Test 1 Check if correct value is given after Stack is Pushed, Popped and then asked if Empty.
     testOpStack.push(Symbol.INVALID);
     testOpStack.pop();
-    assertEquals(true, testOpStack.isEmpty(), "Checks if Stack is Empty after pop.");
+    assertEquals(true, testOpStack.isEmpty(),
+        "Test stack is empty after being pushed and then popped.");
   }
 
   @Test
   public void testTop() {
-    // Test 1 Checking if correct value is given when top method is called.
     testOpStack.push(Symbol.MINUS);
     assertEquals(Symbol.MINUS, testOpStack.top(),
-        "Checks correct Entry is at the top of the Stack");
+        "Test top returns the most recent entry of stack.");
+
     assertEquals(Symbol.MINUS, testOpStack.top(),
-        "Checking twice as Entry should not be removed when top method is called");
+        "Test top again to insure value returned is the most recent entry of stack.");
   }
 
 
