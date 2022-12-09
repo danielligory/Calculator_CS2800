@@ -19,8 +19,7 @@ public class RevPolishCalc {
         i++;
       }
     }
-    revPolishInput.add(input.substring(input.length() - 1, input.length())); // adds the last value
-                                                                             // // the String
+    revPolishInput.add(input.substring(input.length() - 1, input.length())); // adds the last value the String
     return revPolishInput;
   }
 
@@ -44,7 +43,7 @@ public class RevPolishCalc {
 
   public float evaluate(String what) {
     int y = 0;
-    makeArray(what);
+    revPolishInput = makeArray(what);
     while (y != revPolishInput.size()) {
       if (!(revPolishInput.get(y).equals("+") || revPolishInput.get(y).equals("-")
           || revPolishInput.get(y).equals("*") || revPolishInput.get(y).equals("/"))) {
