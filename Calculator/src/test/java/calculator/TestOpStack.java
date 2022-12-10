@@ -18,12 +18,11 @@ class TestOpStack {
   public void createOPStack() {
     // Test 1 Check if stack is created.
     testOpStack = new OpStack();
+    assertEquals(0, testOpStack.size(), "Test the size of an Empty Stack.");
   }
 
   @Test
   public void testPush() {
-    assertEquals(0, testOpStack.size(), "Test that push increased the size of an empty stack.");
-
     testOpStack.push(Symbol.DIVIDE);
     assertEquals(1, testOpStack.size(),
         "Test that push increased the size of a stack with size 1.");

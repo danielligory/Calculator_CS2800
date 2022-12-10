@@ -19,12 +19,11 @@ class TestNumStack {
   public void createNumStack() {
     // Test 1 Check if stack is created.
     testNumStack = new NumStack();
+    assertEquals(0, testNumStack.size(), "Tests the size of an Empty Stack.");
   }
 
   @Test
   public void testPush() {
-    assertEquals(0, testNumStack.size(), "Test that push increased the size of an empty stack.");
-
     testNumStack.push(1234.123f);
     assertEquals(1, testNumStack.size(),
         "Test that push increased the size of a stack with size 1.");
@@ -43,13 +42,11 @@ class TestNumStack {
 
   }
 
-
   @Test
   public void testPop() {
     assertThrows(EmptyStackException.class, () -> testNumStack.pop(),
         "Should not be able to pop from an Empty Stack.");
   }
-
 
   @Test
   public void pushThenPop() {

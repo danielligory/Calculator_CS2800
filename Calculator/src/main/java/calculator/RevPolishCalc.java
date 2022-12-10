@@ -8,7 +8,12 @@ public class RevPolishCalc {
   int count = 0;
   int i = 0;
 
-
+  /**
+   * Splits an input string into an array of substrings, separated by whitespace.
+   * 
+   * @param input the input string to split
+   * @return a list of substrings from the input string
+   */
   public ArrayList<String> makeArray(String input) {
     while (i != input.length()) {
       if (input.substring(i, i + 1).isBlank()) {
@@ -19,11 +24,17 @@ public class RevPolishCalc {
         i++;
       }
     }
-    revPolishInput.add(input.substring(input.length() - 1, input.length())); // adds the last value the String
+    revPolishInput.add(input.substring(input.length() - 1, input.length())); // adds the last value
+                                                                             // the String
     return revPolishInput;
   }
 
-
+  /**
+   * Performs the operation at the top of the operator stack on the top two values of the values
+   * stack, and pushes the result onto the values stack.
+   *
+   * @param input the operator to perform, as a string ("+", "-", "*", or "/")
+   */
   public void operationStack(String input) {
     float value1;
     float value2;
@@ -40,7 +51,12 @@ public class RevPolishCalc {
     }
   }
 
-
+  /**
+   * Evaluates the given Reverse Polish notation expression and returns the result.
+   *
+   * @param what the Reverse Polish notation expression to evaluate, as a string
+   * @return the result of the evaluation
+   */
   public float evaluate(String what) {
     int y = 0;
     revPolishInput = makeArray(what);
@@ -55,8 +71,7 @@ public class RevPolishCalc {
       }
     }
     return values.pop();
-
-
   }
+
 
 }

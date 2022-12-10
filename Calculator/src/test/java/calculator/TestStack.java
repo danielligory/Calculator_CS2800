@@ -20,11 +20,11 @@ class TestStack {
   public void createStack() {
     // Test 1 Check if stack is created.
     testStack = new Stack();
+    assertEquals(testStack.size(), 0, "Test size is 0 of Empty Stack.");
   }
 
   @Test
   public void testPush() {
-    assertEquals(testStack.size(), 0, "Test Stack is working.");
     Entry testOne = new Entry(1);
     testStack.push(testOne);
     assertEquals(testStack.size(), 1, "Test if Stack has one Entry");
@@ -38,7 +38,6 @@ class TestStack {
       i++;
     }
     assertEquals(testStack.size(), 7, "Test if Stack has seven Entries");
-
   }
 
   @Test

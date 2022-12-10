@@ -51,12 +51,9 @@ public class StandardCalc {
   }
 
   /**
-   * 
-   * Compares the precedence of two symbols on the operator stack.
-   * 
-   * @param symbol1 the first symbol to compare
-   * @param symbol2 the second symbol to compare
-   * @return true if the precedence of symbol1 is greater than that of symbol2, false otherwise
+   * Pushes the given operator to the operator stack.
+   *
+   * @param value the operator to push, as a string ("+", "-", "*", or "/")
    */
   public void pushOperator(String value) {
     switch (value) {
@@ -108,7 +105,7 @@ public class StandardCalc {
    * @param what the arithmetic expression to evaluate
    * @return the result of the evaluation
    */
-  public float evaluate(String what) { // public float evaluate(String what){
+  public float evaluate(String what) {
     int y = 0;
     standardCalcInput = makeArray(what);
     while (y != standardCalcInput.size()) {
@@ -150,7 +147,5 @@ public class StandardCalc {
 
     return numValues.top();
   }
-
-
 
 }
