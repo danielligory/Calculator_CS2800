@@ -12,21 +12,24 @@ import org.junit.jupiter.api.Test;
  */
 class TestEntry {
 
+
   @Test
-  void testContructor1() {
+  public void testGetValue() {
     Entry e = new Entry(100f);
-    assertEquals(100f, e.getValue(), "Tests that constructor is assigning the correct value.");
+    assertEquals(100f, e.getValue(),
+        "Tests that the getValue method returns the value of the number.");
+
     Entry e1 = new Entry(1230090213901239f);
     assertEquals(1230090213901239f, e1.getValue(),
-        "Tests the constructor with a longer float to check correct value is assigned.");
+        "Tests that the getValue methods returns the value of a longer number.");
 
   }
 
   @Test
-  void testContructor2() {
+  public void testGetSymbol() {
     Entry e = new Entry(Symbol.LEFT_BRACKET);
     assertEquals(Symbol.LEFT_BRACKET, e.getSymbol(),
-        "Tests the constructor to make sure the correct symbol is assigned by constructor.");
+        "Tests that getSymbol() method returns the correct symbol.");
 
   }
 
